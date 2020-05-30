@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+.header-container {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background: #8B0000;
+    color: white;
+}
+
+.header-container .header-bar  {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+
+
+.header-container .header-bar  a  {
+    color: white;
+    font-size: bold;
+}
+
+.site-name {
+    font-size:200%;
+    margin:10px 10px 10px 0px;
+    padding: 5px;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+     <div class="header-container"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+ 
+   <div class="site-name">Inventory Management System</div>
+   
+   <div class="header-bar">
+  
+   
+      <th:block sec:authorize="isAuthenticated()">
+      
+         Hello
+        <!--  <a th:href="@{/admin/accountInfo}" th:utext="${#request.userPrincipal.name}"></a> -->
+       <a th:href="@{/admin/accountInfo}" th:value="${userPrincipal?.name}"></a>
+         &nbsp;|&nbsp;
+         <a th:href="@{/admin/logout}">Logout</a>
+      </th:block>
+       
+      <th:block sec:authorize="!isAuthenticated()">
+       <a th:href="@{/admin/login}">Login</a>
+      </th:block>
+     
+     
+   </div>
+   
+</div>
+</body>
+</html>

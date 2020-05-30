@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Item Shop Online</title>
+ <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+  <style>
+  html {
+   
+    background-image: url('index_image.jpg');
+     height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-container {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background: #8B0000;
+    color: white;
+}
+
+.header-container .header-bar  {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+
+
+.header-container .header-bar  a  {
+    color: white;
+    font-size: bold;
+}
+
+
+
+.footer-container {
+    text-align: center;
+    margin-top: 200px;
+    padding: 5px 0px 0px 0px;
+    border-top: 5px solid #ccc;
+    font-size: bold;
+    color:#004d99;
+}
+
+
+
+.menu-container {
+    text-align: center;
+    margin: 10px 5px;
+}
+.menu-container a {
+    margin: 5px 5px 5px 10px;
+    color: #004d99;
+    font-weight: bold;
+    text-decoration: none;
+}
+  
+.site-name {
+    font-size:200%;
+    margin:10px 10px 10px 0px;
+    padding: 5px;
+}
+  
+.container  {
+    margin: 5px 0px;
+}
+
+  </style>
+</head>
+<body>
+
+ <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+      
+      <!-- <div class="page-title">Shopping Cart Demo</div> -->
+      <div class="demo-container">
+         <!-- <h3>Demo content</h3>
+         <ul>
+            <li>Buy online</li>
+            <li>Admin pages</li>
+            <li>Reports</li>
+         </ul> -->
+      </div>
+       
+      <th:block th:include="/_footer"></th:block>
+       
+
+</body>
+</html>
